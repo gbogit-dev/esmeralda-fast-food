@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#B8452E" />
+    <title>Sabor & Detalle by Denys - Comida con estilo | Delivery y Recojo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/logo.png" />
+</head>
+
+<body data-brand="Sabor & Detalle">
+    <div class="announcement-bar" data-testid="announcement-bar">
+        <i class="fa-solid fa-truck-fast"></i>
+        <span>Realiza tus pedidos de forma <strong>rápida</strong> , fácil y segura</span>
+    </div>
+
+    <header class="header-modern" data-testid="main-header">
+        <div class="header-modern__container">
+            <a href="index.html" class="header-modern__logo" data-testid="brand-logo">
+                <img src="img/logo.png" alt="Logo" class="header-modern__logo-img" />
+            </a>
+            <button class="header-modern__menu-toggle" id="menuToggle" aria-label="Menú" data-testid="menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header-modern__nav" id="navMenu">
+                <a href="index.html" class="header-modern__nav-link active" data-testid="nav-carta">
+                    <i class="fa-regular fa-rectangle-list"></i> Carta
+                </a>
+                <a href="#promos" class="header-modern__nav-link" data-testid="nav-promos">
+                    <i class="fa-solid fa-fire"></i> Promociones
+                </a>
+                <a href="https://wa.me/51955616836?text=Hola!%20quiero%20hacer%20un%20pedido%20corporativo%20para%20X%20personas"
+                    class="header-modern__nav-link" data-testid="nav-corporativo" target="_blank"
+                    rel="noopener noreferrer">
+
+                    <i class="fa-solid fa-building"></i> Corporativo
+                </a>
+            </nav>
+            <div class="header-modern__actions">
+                <div class="header-modern__search" data-testid="search-bar" style="position: relative;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar..." aria-label="Buscar productos"
+                        data-testid="search-input" id="searchInput" />
+                    <div class="search-results" id="searchResults" style="display: none;"></div>
+                </div>
+                <button class="header-modern__action-btn header-modern__action-btn--location"
+                    data-testid="location-button" title="Tu ubicación">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span class="header-modern__action-label">Ubicación</span>
+                </button>
+                <button class="header-modern__action-btn header-modern__action-btn--user" data-testid="login-button"
+                    title="Inicia sesión">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="header-modern__action-label">Sesión</span>
+                </button>
+                <button class="header-modern__action-btn header-modern__action-btn--cart" id="cartButton"
+                    data-testid="cart-button" title="Tu carrito">
+                    <span class="header-modern__badge" id="cartBadge">0</span>
+                    <i class="fa-solid fa-shopping-bag"></i>
+                    <span class="header-modern__action-label" id="cartTotal">S/ 0.00</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="hero" data-testid="hero-carousel">
+            <div class="hero__viewport">
+                <div class="hero__track" id="heroTrack">
+                    <article class="hero__slide hero__slide--1"></article>
+                    <article class="hero__slide hero__slide--2"></article>
+                    <article class="hero__slide hero__slide--3"></article>
+                </div>
+                <button class="hero__nav hero__nav--prev" id="heroPrev" aria-label="Anterior" data-testid="hero-prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="hero__nav hero__nav--next" id="heroNext" aria-label="Siguiente" data-testid="hero-next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <div class="hero__dots" id="heroDots" data-testid="hero-dots"></div>
+            </div>
+        </section>
+
+        <section class="quickcats-carousel" data-testid="quick-categories">
+            <div class="menu-carousel-wrapper">
+                <button class="carousel-btn prev-btn" aria-label="Anterior">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="carousel-track" id="track">
+                    <a href="#promos" class="menu-item" data-testid="quickcat-promos">
+                        <span class="item-title">Promos Grupales</span>
+                        <div class="image-box">
+                            <img src="items/promos_grupales.png" alt="Promos" class="menu-item-image" />
+                        </div>
+                    </a>
+                    <a href="#desayunos" class="menu-item" data-testid="quickcat-desayunos">
+                        <span class="item-title">Desayunos</span>
+                        <div class="image-box">
+                            <img src="items/desayunos.png" alt="Desayunos" class="menu-item-image" />
+                        </div>
+                    </a>
+                    <a href="#almuerzos" class="menu-item" data-testid="quickcat-almuerzos">
+                        <span class="item-title">Almuerzos</span>
+                        <div class="image-box">
+                            <img src="items/almuerzos.png" alt="Almuerzos" class="menu-item-image" />
+                        </div>
+                    </a>
+                    <a href="#cenas" class="menu-item" data-testid="quickcat-cenas">
+                        <span class="item-title">Cenas</span>
+                        <div class="image-box">
+                            <img src="items/cenas.png" alt="Cenas" class="menu-item-image" />
+                        </div>
+                    </a>
+                    <a href="#bocaditos" class="menu-item" data-testid="quickcat-bocaditos">
+                        <span class="item-title">Bocaditos</span>
+                        <div class="image-box">
+                            <img src="items/bocaditos.png" alt="Bocaditos" class="menu-item-image" />
+                        </div>
+                    </a>
+                </div>
+                <button class="carousel-btn next-btn" aria-label="Siguiente">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <div id="sections"></div>
+    </main>
+
+    <footer class="footer" data-testid="footer">
+        <div class="footer__top">
+            <div class="footer__col">
+                <img src="img/logo.png" alt="Logo" class="footer__logo" />
+                <p>Cada plato, un detalle. Delivery, recojo en tienda y consumo en local.</p>
+                <div class="footer__social">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Nosotros</h4>
+                <a href="#">Sobre Sabor & Detalle</a>
+                <a href="#">Nuestro menú</a>
+                <a href="#">Síguenos en redes</a>
+            </div>
+            <div class="footer__col">
+                <h4>Ayuda</h4>
+                <a href="#">Centro de atención</a>
+                <a href="#">Reclamos</a>
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Política de privacidad</a>
+            </div>
+            <div class="footer__col">
+                <h4>¿No sabes cómo realizar un pedido?</h4>
+                <a href="#" class="footer__whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <small>© 2026 SABOR & DETALLE · Todos los derechos reservados · Hecho con <i class="fa-solid fa-heart"></i>
+                en Piura</small>
+            <br>
+            <small>Sitio web desarrollado por: <a href="https://wa.me/51994236605?text=Hola!%20Vengo%20de%20la%20pagina%20y%20me%20gustaria%20un%20diseno%20para%20mi%20pagina" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Gabo Web</a></small>
+        </div>
+    </footer>
+
+    <aside class="cart-drawer" id="cartDrawer" data-testid="cart-drawer" aria-hidden="true">
+        <div class="cart-drawer__head">
+            <h3>Tu carrito</h3>
+            <button class="cart-drawer__close" id="cartClose" data-testid="cart-close" aria-label="Cerrar"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-drawer__body" id="cartBody">
+            <div class="cart-drawer__empty">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Tu carrito está vacío</p>
+                <small>Agrega productos para verlos aquí</small>
+            </div>
+        </div>
+        <div class="cart-drawer__foot">
+            <div class="cart-drawer__row">
+                <span>Subtotal</span>
+                <strong id="cartSubtotal">S/ 0.00</strong>
+            </div>
+            <button class="btn btn--solid btn--block" id="cartCheckoutWhatsApp" data-testid="cart-checkout"><i
+                    class="fa-brands fa-whatsapp"></i> Confirmar pedido por WhatsApp</button>
+        </div>
+    </aside>
+    <div class="cart-overlay" id="cartOverlay" data-testid="cart-overlay"></div>
+    <div class="toast" id="toast" data-testid="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/carousel.js"></script>
+</body>
+
+</html>
