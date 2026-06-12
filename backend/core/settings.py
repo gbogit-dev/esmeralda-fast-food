@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$g--r5dk15y%&r)mv!s)@ux4ky*7a9+9)p_*1c(=icsalb(1+8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['esmeralda-fast-food.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
